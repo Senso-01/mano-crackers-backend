@@ -5,6 +5,9 @@ const orderController = require('../controllers/orderController');
 // Create a new order
 router.post('/', orderController.createOrder);
 
+// Send receipt email - ADD THIS LINE
+router.post('/send-receipt-email', orderController.sendReceiptEmail);
+
 // Get all orders
 router.get('/', orderController.getOrders);
 
@@ -12,6 +15,5 @@ router.get('/', orderController.getOrders);
 router.get('/:id', orderController.getOrderById);
 
 router.patch('/:id/delivery-status', orderController.updateDeliveryStatus);
-
 
 module.exports = router;
